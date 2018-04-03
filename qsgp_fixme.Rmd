@@ -6,14 +6,18 @@ output: html_notebook
 ##QSGP Example plots
 QSGP is the most awesome class and I have learned so much! Below I show off on all the things I have learned!
 
-```{r setup}
+```{r setup, include = FALSE, echo = FALSE}
 library(tidyverse)
 library(nycflights13)
 ```
 
 First, let's do some joining on the flights data
 
-```{r }
+```{r make the objects}
+
+flights2 <- flights %>% 
+  select(year:day, hour, origin, dest, tailnum, carrier)
+flights2
 
 ```
 
