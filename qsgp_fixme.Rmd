@@ -1,0 +1,19 @@
+---
+title: "Plot QSGP"
+output: html_notebook
+---
+
+##QSGP Example plots
+QSGP is the most awesome class and I have learned so much! Below I show off on all the things I have learned!
+
+```{r setup}
+library(tidyverse)
+library(nycflights13)
+```
+
+First, let's do some joining on the flights data
+
+```{r }
+
+```
+
