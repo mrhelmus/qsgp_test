@@ -30,7 +30,7 @@ kable(flights2[1:10,])
 
 ```
 
-Now make a histogram for <font color="blue">JetBlue</font>
+Now make a histogram for <font color="blue">JeBlue</font>
 
 ```{r JetBlue Histogram}
 

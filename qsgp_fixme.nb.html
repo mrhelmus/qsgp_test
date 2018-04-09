@@ -187,115 +187,28 @@ $(document).ready(function () {
 <h3>First, let’s do some joining on the flights data</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0czIgPC0gZmxpZ2h0cyAlPiUgXG4gIHNlbGVjdCh5ZWFyLCBvcmlnaW4sIGRlc3QsIHRhaWxudW0sIGNhcnJpZXIsIGRpc3RhbmNlKVxuZmxpZ2h0czIgPC0gZmxpZ2h0czIgJT4lXG4gIHNlbGVjdCgtb3JpZ2luLCAtZGVzdCkgJT4lIFxuICBsZWZ0X2pvaW4oYWlybGluZXMsIGJ5ID0gXCJjYXJyaWVyXCIpXG5rYWJsZShmbGlnaHRzMlsxOjEwLF0pXG5gYGAifQ== -->
-<pre class="r"><code>flights2 &lt;- flights %&gt;% 
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mbGlnaHRzMiA8LSBmbGlnaHRzICU+JSBcbiAgc2VsZWN0KHllYXIsIG9yaWdpbiwgZGVzdCwgdGFpbG51bSwgY2FycmllciwgZGlzdGFuY2UpXG5cblxuZmxpZ2h0czIgPC0gZmxpZ2h0czIgJT4lXG4gIHNlbGVjdCgtb3JpZ2luLCAtZGVzdCkgJT4lIFxuICBsZWZ0X2pvaW4oYWlybGluZXMsIGJ5ID0gXCJjYXJyaWVyXCIpXG5rYWJsZShmbGlnaHRzMlsxOjEwLF0pXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+flights2 &lt;- flights %&gt;% 
   select(year, origin, dest, tailnum, carrier, distance)
+
+
 flights2 &lt;- flights2 %&gt;%
   select(-origin, -dest) %&gt;% 
   left_join(airlines, by = &quot;carrier&quot;)
-kable(flights2[1:10,])</code></pre>
+kable(flights2[1:10,])
+</code></pre>
 <!-- rnb-source-end -->
-
-<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
-
-<table>
-<thead>
-<tr class="header">
-<th align="right">year</th>
-<th align="left">tailnum</th>
-<th align="left">carrier</th>
-<th align="right">distance</th>
-<th align="left">name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">2013</td>
-<td align="left">N14228</td>
-<td align="left">UA</td>
-<td align="right">1400</td>
-<td align="left">United Air Lines Inc.</td>
-</tr>
-<tr class="even">
-<td align="right">2013</td>
-<td align="left">N24211</td>
-<td align="left">UA</td>
-<td align="right">1416</td>
-<td align="left">United Air Lines Inc.</td>
-</tr>
-<tr class="odd">
-<td align="right">2013</td>
-<td align="left">N619AA</td>
-<td align="left">AA</td>
-<td align="right">1089</td>
-<td align="left">American Airlines Inc.</td>
-</tr>
-<tr class="even">
-<td align="right">2013</td>
-<td align="left">N804JB</td>
-<td align="left">B6</td>
-<td align="right">1576</td>
-<td align="left">JetBlue Airways</td>
-</tr>
-<tr class="odd">
-<td align="right">2013</td>
-<td align="left">N668DN</td>
-<td align="left">DL</td>
-<td align="right">762</td>
-<td align="left">Delta Air Lines Inc.</td>
-</tr>
-<tr class="even">
-<td align="right">2013</td>
-<td align="left">N39463</td>
-<td align="left">UA</td>
-<td align="right">719</td>
-<td align="left">United Air Lines Inc.</td>
-</tr>
-<tr class="odd">
-<td align="right">2013</td>
-<td align="left">N516JB</td>
-<td align="left">B6</td>
-<td align="right">1065</td>
-<td align="left">JetBlue Airways</td>
-</tr>
-<tr class="even">
-<td align="right">2013</td>
-<td align="left">N829AS</td>
-<td align="left">EV</td>
-<td align="right">229</td>
-<td align="left">ExpressJet Airlines Inc.</td>
-</tr>
-<tr class="odd">
-<td align="right">2013</td>
-<td align="left">N593JB</td>
-<td align="left">B6</td>
-<td align="right">944</td>
-<td align="left">JetBlue Airways</td>
-</tr>
-<tr class="even">
-<td align="right">2013</td>
-<td align="left">N3ALAA</td>
-<td align="left">AA</td>
-<td align="right">733</td>
-<td align="left">American Airlines Inc.</td>
-</tr>
-</tbody>
-</table>
-
-
-<!-- rnb-html-end -->
-
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Now make a histogram for <font color="blue">JetBlue</font></p>
+<p>Now make a histogram for <font color="blue">JeBlue</font></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0czIgJT4lIGZpbHRlcihjYXJyaWVyID09IFwiQUFcIikgJT4lIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBkaXN0YW5jZSkpICsgZ2VvbV9oaXN0b2dyYW0oKSArIHlsYWIoXCJKZXRCbHVlIERpc3RhbmNlIGNvdW50XCIpXG5gYGAifQ== -->
-<pre class="r"><code>flights2 %&gt;% filter(carrier == &quot;AA&quot;) %&gt;% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab(&quot;JetBlue Distance count&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mbGlnaHRzMiAlPiUgZmlsdGVyKGNhcnJpZXIgPT0gXCJBQVwiKSAlPiUgZ2dwbG90KG1hcHBpbmcgPSBhZXMoeCA9IGRpc3RhbmNlKSkgKyBnZW9tX2hpc3RvZ3JhbSgpICsgeWxhYihcIkpldEJsdWUgRGlzdGFuY2UgY291bnRcIilcblxuYGBgIn0= -->
+<pre class="r"><code>
+flights2 %&gt;% filter(carrier == &quot;AA&quot;) %&gt;% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab(&quot;JetBlue Distance count&quot;)
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-plot-begin eyJjb25kaXRpb25zIjpbWzAsImBzdGF0X2JpbigpYCB1c2luZyBgYmlucyA9IDMwYC4gUGljayBiZXR0ZXIgdmFsdWUgd2l0aCBgYmlud2lkdGhgLlxuIl1dLCJoZWlnaHQiOjQzMi42MzI5LCJzaXplX2JlaGF2aW9yIjowLCJ3aWR0aCI6NzAwfQ== -->
-<p><img src="data:image/png;base64,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" /></p>
-<!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Drop the mic! Off to save the world…</p>
@@ -303,7 +216,7 @@ kable(flights2[1:10,])</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlBsb3QgUVNHUCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZGF0ZTogImByIGZvcm1hdChTeXMudGltZSgpLCAnJWQgJUIsICVZJylgIg0KYXV0aG9yOiAiQXV0aG9yOiBBIFByb2JsZW0gU29sdmluZyBTdHVkZW50Ig0KLS0tDQoNCiMjUVNHUCBFeGFtcGxlcw0KUVNHUCBpcyB0aGUgKm1vc3QqIGF3ZXNvbWUgY2xhc3MhIEkgaGF2ZSBsZWFybmVkIHNvIG11Y2ghIEJlbG93IEkgc2hvdyBvZmYgc29tZSBvZiB0aGUgdGhpbmdzIEkgaGF2ZSBsZWFybmVkISANCg0KYGBge3Igc2V0dXAsIGluY2x1ZGUgPSBUUlVFLCBlY2hvID0gRkFMU0V9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobnljZmxpZ2h0czEzKQ0KbGlicmFyeShrbml0cikNCmBgYA0KDQotLS0NCiMjI0ZpcnN0LCBsZXQncyBkbyBzb21lIGpvaW5pbmcgb24gdGhlIGZsaWdodHMgZGF0YQ0KDQpgYGB7ciBtYWtlIHRoZSBvYmplY3RzfQ0KDQpmbGlnaHRzMiA8LSBmbGlnaHRzICU+JSANCiAgc2VsZWN0KHllYXIsIG9yaWdpbiwgZGVzdCwgdGFpbG51bSwgY2FycmllciwgZGlzdGFuY2UpDQoNCg0KZmxpZ2h0czIgPC0gZmxpZ2h0czIgJT4lDQogIHNlbGVjdCgtb3JpZ2luLCAtZGVzdCkgJT4lIA0KICBsZWZ0X2pvaW4oYWlybGluZXMsIGJ5ID0gImNhcnJpZXIiKQ0Ka2FibGUoZmxpZ2h0czJbMToxMCxdKQ0KDQpgYGANCg0KTm93IG1ha2UgYSBoaXN0b2dyYW0gZm9yIDxmb250IGNvbG9yPSJibHVlIj5KZXRCbHVlPC9mb250Pg0KDQpgYGB7ciBKZXRCbHVlIEhpc3RvZ3JhbX0NCg0KZmxpZ2h0czIgJT4lIGZpbHRlcihjYXJyaWVyID09ICJBQSIpICU+JSBnZ3Bsb3QobWFwcGluZyA9IGFlcyh4ID0gZGlzdGFuY2UpKSArIGdlb21faGlzdG9ncmFtKCkgKyB5bGFiKCJKZXRCbHVlIERpc3RhbmNlIGNvdW50IikNCg0KYGBgDQoNCkRyb3AgdGhlIG1pYyEgT2ZmIHRvIHNhdmUgdGhlIHdvcmxkLi4uDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlBsb3QgUVNHUCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KZGF0ZTogImByIGZvcm1hdChTeXMudGltZSgpLCAnJWQgJUIsICVZJylgIg0KYXV0aG9yOiAiQXV0aG9yOiBBIFByb2JsZW0gU29sdmluZyBTdHVkZW50Ig0KLS0tDQoNCiMjUVNHUCBFeGFtcGxlcw0KUVNHUCBpcyB0aGUgKm1vc3QqIGF3ZXNvbWUgY2xhc3MhIEkgaGF2ZSBsZWFybmVkIHNvIG11Y2ghIEJlbG93IEkgc2hvdyBvZmYgc29tZSBvZiB0aGUgdGhpbmdzIEkgaGF2ZSBsZWFybmVkISANCg0KYGBge3Igc2V0dXAsIGluY2x1ZGUgPSBUUlVFLCBlY2hvID0gRkFMU0V9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobnljZmxpZ2h0czEzKQ0KbGlicmFyeShrbml0cikNCmBgYA0KDQotLS0NCiMjI0ZpcnN0LCBsZXQncyBkbyBzb21lIGpvaW5pbmcgb24gdGhlIGZsaWdodHMgZGF0YQ0KDQpgYGB7ciBtYWtlIHRoZSBvYmplY3RzfQ0KDQpmbGlnaHRzMiA8LSBmbGlnaHRzICU+JSANCiAgc2VsZWN0KHllYXIsIG9yaWdpbiwgZGVzdCwgdGFpbG51bSwgY2FycmllciwgZGlzdGFuY2UpDQoNCg0KZmxpZ2h0czIgPC0gZmxpZ2h0czIgJT4lDQogIHNlbGVjdCgtb3JpZ2luLCAtZGVzdCkgJT4lIA0KICBsZWZ0X2pvaW4oYWlybGluZXMsIGJ5ID0gImNhcnJpZXIiKQ0Ka2FibGUoZmxpZ2h0czJbMToxMCxdKQ0KDQpgYGANCg0KTm93IG1ha2UgYSBoaXN0b2dyYW0gZm9yIDxmb250IGNvbG9yPSJibHVlIj5KZUJsdWU8L2ZvbnQ+DQoNCmBgYHtyIEpldEJsdWUgSGlzdG9ncmFtfQ0KDQpmbGlnaHRzMiAlPiUgZmlsdGVyKGNhcnJpZXIgPT0gIkFBIikgJT4lIGdncGxvdChtYXBwaW5nID0gYWVzKHggPSBkaXN0YW5jZSkpICsgZ2VvbV9oaXN0b2dyYW0oKSArIHlsYWIoIkpldEJsdWUgRGlzdGFuY2UgY291bnQiKQ0KDQpgYGANCg0KRHJvcCB0aGUgbWljISBPZmYgdG8gc2F2ZSB0aGUgd29ybGQuLi4NCg==</div>
 
 
 
