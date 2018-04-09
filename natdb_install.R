@@ -1,7 +1,13 @@
+# first install the package devtools
+install.packages("devtools")
+
+# then load devtools
 require(devtools)
-install_github("willpearse/suppdata")
-library(githubinstall)
-githubinstall("natdb")
-install_github("willpearse/natbd")
-github
+
+# then you need to install the testdat package
+install_github("ropensci/testdat")
+
+# then you install the package natdb
+install_github("willpearse/natdb")
+
 
