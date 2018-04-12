@@ -1,4 +1,4 @@
-# Setting up NATDB to work on your computer
+# Set up NATDB to work on your computer
 
 # First make sure to close R and then open R without any packages loaded.
 # As you are installing these packages, make sure that they are installing correctly. 
@@ -49,8 +49,8 @@ library(fulltext)
 mydats <- c(".albouy.2015", ".anderson.2015",".artacho.2015",".augspurger.2016a",".bengtsson.2016")
 
 # Make sure to tell NATDB where you want to store all of the files. REPLACE WITH YOUR DIRECTORY
-dat <- natdb(cache = "C:\\Users\\tuf86195\\Downloads\\natdb",datasets = mydats)
-dat <- natdb(cache = "C:REPLACE WITH YOUR DIRECTORY",datasets = mydats)
+mydir <-"REPLACE WITH THE DIRECTORY WHERE YOU WANT TO STORE DOWNLODED NATDB FILES"
+dat <- natdb(cache = mydir, datasets = mydats)
 # it then helps to run a cleaner function on the dataset, this makes the data a bit easier to wrangle
 clean.data <- clean.natdb(dat)
 
@@ -64,3 +64,4 @@ trait_spp <- trait_spp %>% group_by(species) %>% summarise(nTrats = n()) %>% mut
 
 # majority of species only have a few traits, but some have >10 traits
 trait_spp  %>% ggplot(aes(x = nTrats)) + geom_histogram(binwidth = 1)
+#--------------------------------------------
