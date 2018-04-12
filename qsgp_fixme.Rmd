@@ -9,6 +9,8 @@ author: "Author: A Problem Solving Student"
 QSGP is the *most* awesome class! I have learned so much! Below I show off some of the things I have learned! 
 
 ```{r setup, include = TRUE, echo = FALSE}
+
+install.packages(c("tidyverse", "nyclfights13", "knitr"))
 library(tidyverse)
 library(nycflights13)
 library(knitr)
@@ -30,11 +32,11 @@ kable(flights2[1:10,])
 
 ```
 
-Now make a histogram for <font color="blue">JeBlue</font>
+Now make a histogram for <font color="blue">JetBlue</font>
 
 ```{r JetBlue Histogram}
 
-flights2 %>% filter(carrier == "AA") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
+flights2 %>% filter(carrier == "B6") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
 
 ```
 
