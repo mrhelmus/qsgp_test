@@ -8,3 +8,4 @@ install_github("mrhelmus/natdb")
 install_github("mrhelmus/natdb", force = TRUE)
 #load the package
 library(natdb)
+install.packages(c("tidyverse", "nyclfights13", "knitr"))
