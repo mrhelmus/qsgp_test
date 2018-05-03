@@ -26,15 +26,15 @@ flights2 <- flights %>%
 flights2 <- flights2 %>%
   select(-origin, -dest) %>% 
   left_join(airlines, by = "carrier")
-kable(flights2[1:10,])
-
+table(flights2[1:10,])
+#Misspelled Table (Was Kable)
 ```
 
 Now make a histogram for <font color="blue">JeBlue</font>
 
 ```{r JetBlue Histogram}
-
-flights2 %>% filter(carrier == "AA") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
+#The code for Jet blue is B6 NOT AA
+flights2 %>% filter(carrier == "B6") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
 
 ```
 
