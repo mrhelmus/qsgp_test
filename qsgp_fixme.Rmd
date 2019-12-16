@@ -1,8 +1,10 @@
 ---
 title: "Plot QSGP"
-output: html_notebook
+author: 'Author: A Problem Solving Student'
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-author: "Author: A Problem Solving Student"
+output:
+  html_document:
+    df_print: paged
 ---
 
 ##QSGP Examples
@@ -30,12 +32,15 @@ kable(flights2[1:10,])
 
 ```
 
-Now make a histogram for <font color="blue">JeBlue</font>
+Now make a histogram for <font color="blue">JetBlue</font>
 
 ```{r JetBlue Histogram}
 
-flights2 %>% filter(carrier == "AA") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
+flights2 %>% filter(carrier == "B6") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
 
+flights %>% 
+  group_by(carrier) %>%
+  summarise(count = n())
 ```
 
 Drop the mic! Off to save the world...
