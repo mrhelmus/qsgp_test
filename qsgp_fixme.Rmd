@@ -18,23 +18,20 @@ library(knitr)
 ###First, let's do some joining on the flights data
 
 ```{r make the objects}
-
 flights2 <- flights %>% 
   select(year, origin, dest, tailnum, carrier, distance)
-
 
 flights2 <- flights2 %>%
   select(-origin, -dest) %>% 
   left_join(airlines, by = "carrier")
 kable(flights2[1:10,])
-
 ```
 
-Now make a histogram for <font color="blue">JeBlue</font>
+Now make a histogram for <font color="blue">JetBlue</font>
 
 ```{r JetBlue Histogram}
 
-flights2 %>% filter(carrier == "AA") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
+flights2 %>% filter(carrier == "B6") %>% ggplot(mapping = aes(x = distance)) + geom_histogram() + ylab("JetBlue Distance count")
 
 ```
 
